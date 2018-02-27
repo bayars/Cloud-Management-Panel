@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% block title %}Manage Server{% endblock%} {% block Content %}
+<!-- Text area -->
+
+<div class='row'>
+		<textarea id="textarea" class="col-md-offset-2" rows="15" cols="90" style="resize: none;display: none"></textarea>
+</div>
+<div class="row">
+		<span id="savebutton" class="col-md-offset-5" style="display: none;"><button onclick="saveandsend('http://127.0.0.1:8000/saveandsend/{{ server }}/{{ modpath }}/');" class="button btn-success">Save</button> </span>
+		<span id="exitbutton" style="display: none;">
+		<button onclick="exit();" class="button btn-danger">Exit</button></span>
+</div>
+
+<!---  End of TextArea --->
+<h3>
+    <div class="navbar-default" style="background-color: #999999"><span class="laberl label-info">Current Path</span> : {{ path }}</div>
+</h3>
+<div class="row">
+    <div class="col-md-4">
+        <h4><a href="http://127.0.0.1:8000/manage.{{ server }}/new/"><span class="label label-primary">Folder</span></a></h4>
+        <hr>
+    </div>
+    <div class="col-md-6">
+        <h4><span class="label label-info">Files</span></h4>
+        <hr>
+    </div>
+    <div class="col-md-2">
+	    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Upload File</button>
+    </div>
+	
+	<div id="Mymodal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Upload File</h4>
+				</div>
+				<div class="modal-body">
+					<form method="post" action="http://127.0.0.1:8000/upload/{{ server }}/{{ modpath }}/" enctype="multipart/form-data">
+					{% csrf_token %}
+					<p>{{ form.as_table }}</p>
+						<button type="submit" class="btn btn-primary">Upload</button>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			<hr>
+		</div>
+	</div>
+	
+	<div class="row">
+    <div class="col-md-4">
+	    {% if path != orginalpath %}
+        <a href="http://127.0.0.1:8000/navback/{{ server }}/{{ modpath }}/"><span class="glyphicon glyphicon-arrow-left" style="color: #ac2925;height: 30px"></span></a>
+	{% endif %}
+        {% for d in dirs %}
+        <ul>
+            <li>
+                <span class="glyphicon glyphicon-folder-close" style="color: #eea236"></span>
+                <a href="http://127.0.0.1:8000/naviforward/{{ server }}/{{ modpath }}{{ d }}/">{{ d }}</a>
+            </li>
+        </ul>
+        {% endfor %}
+     	</div>
+    <div class="col-md-8">
+	    <hr>
+        {% for f in files %}
+        <ul>
+            <li>
+                    <span class="glyphicon glyphicon-file" style="color: cornflowerblue"></span> {{ f }}
+                <a class="col-md-offset-1">
+                    <span onclick="edit('http://127.0.0.1:8000/edit/{{ server }}/{{ modpath }}/{{ f }}','{{ f }}');" class="glyphicon glyphicon-edit" style="color: darkorange"> </span></a>
+                <a href="http://127.0.0.1:8000/download/{{ server }}/{{ modpath }}/{{ f }}"><span>
+                    <i class="glyphicon glyphicon-download" style="color: #4cae4c"></i>
+                    </span></a>
+                <span onclick="removefile('http://127.0.0.1:8000/delete/{{ server }}/{{ modpath }}/{{ f }}','{{ f }}')" class=" glyphicon glyphicon-remove-sign" style="color:  red"></span>
+            </li>
+        </ul>
+	    {% endfor %}
+    </div>
+</div>
+
+{% endblock  %}

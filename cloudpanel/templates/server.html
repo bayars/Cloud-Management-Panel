@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{% block title %} Servers {% endblock %}
+{% block Content %}
+<div class="row">
+    <div class="col-md-4"><h4>NAME</h4></div>
+    <div class="col-md-4"><h4>IP</h4></div>
+    <div class="col-md-4"><h4>ACTION</h4></div>
+</div>
+<hr>
+{% for s in sv%}
+<div class="row">
+    <div class="col-md-4">{{ s.boxname  }}</div>
+    <div class="col-md-4">{{ s.ip }}</div>
+    <div class="col-md-4"><a target="_blank" href="http://127.0.0.1:8000/manage/{{ s.boxname }}/new"><button class="btn btn-primary">Manage</button></a></div>
+</div>
+<hr>
+{% endfor %}
+{% endblock %}

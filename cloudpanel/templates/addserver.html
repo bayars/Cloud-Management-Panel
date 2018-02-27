@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+{% block title %} Add Server{% endblock %}
+{% block Content %}
+
+{{ msg }}
+<div class="row">
+    <div class="col-md-4"><h2>Add Pyhsical Server</h2></div>
+    <div class="col-md-4" col-md-offset-5>
+        <form method="POST">
+            {% csrf_token %}
+            <h4>Boxname:</h4>
+            {{ form.boxname }}
+            <h4>IP:</h4>
+            {{form.ip}}<br>
+            <h4>PORT:</h4>
+            {{form.port}}
+            <h4>Username</h4>
+            {{ form.username }}<br>
+            <h4>Password</h4>
+            {{ form.password }}<br>
+            <h4>Path:</h4>
+            {{ form.path }}<br><br>
+            <button type="submit" class="btn btn-primary col-md-offset-2">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

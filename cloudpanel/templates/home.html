@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{% block title %} HOME{% endblock %}
+{% block Content %}
+<h3>Welcome to Cloud Panel</h3>
+<div class="row">
+    <hr>
+    <h4 class="col-md-3">Add Server</h4>
+    <a href="http://127.0.0.1:8000/addserver/"><button class="btn btn-primary col-md-3">Add</button></a> 
+</div>
+<div class="row">
+    <h4 class="col-md-3">Remove Server</h4>
+    <a href="http://127.0.0.1:8000/removeserver/"><button class="btn btn-primary col-md-1">Remove</button></a>
+</div>
+{% endblock %}
