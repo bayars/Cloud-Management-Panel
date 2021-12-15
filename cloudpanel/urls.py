@@ -6,19 +6,19 @@ import manager.views
 admin.autodiscover()
 
 urlpatterns = [
-    path(r'^admin/', admin.site.urls),
-    path(r'^$',explorer.views.home,name='home'),
-    path(r'^servers/$', explorer.views.servers),
-    path(r'^addserver/$', explorer.views.addserver),
-    path(r'^removeserver/$', explorer.views.removeserver),
-    path(r'^manage/(?P<server>[\w]+)/(?P<path>[\w]+)/$', manager.views.filemanager),
-    path(r'^navback/(?P<server>[\w]+)/(?P<path>[\*\w]+)/$', manager.views.navbackward),
-    path(r'^naviforward/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<dir>[\w]+)/$', manager.views.navforward),
-    path(r'^edit/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<file>[\.\w]+)$', manager.views.editdata),
-    path(r'^saveandsend/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<file>[\.\w]+)$', manager.views.senddata),
-    path(r'^upload/(?P<server>[\w]+)/(?P<path>[\*\w]+)$', manager.views.uploadfile),
-    path(r'^delete/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<file>[\.\w]+)$', manager.views.deletefile),
-	#path(r'^servers/$','explorer.views.servers'),
+    path('admin/', admin.site.urls),
+    path('',explorer.views.home,name='home'),
+    path('servers/', explorer.views.servers),
+    path('addserver/', explorer.views.addserver),
+    path('removeserver/', explorer.views.removeserver),
+    path('manage/(?P<server>[\w]+)/(?P<path>[\w]+)/$', manager.views.filemanager),
+    path('navback/(?P<server>[\w]+)/(?P<path>[\*\w]+)/$', manager.views.navbackward),
+    path('naviforward/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<dir>[\w]+)/$', manager.views.navforward),
+    path('edit/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<file>[\.\w]+)$', manager.views.editdata),
+    path('saveandsend/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<file>[\.\w]+)$', manager.views.senddata),
+    path('upload/(?P<server>[\w]+)/(?P<path>[\*\w]+)$', manager.views.uploadfile),
+    path('delete/(?P<server>[\w]+)/(?P<path>[\*\w]+)/(?P<file>[\.\w]+)$', manager.views.deletefile),
+	#explorer.views.home  path(r'^servers/$','explorer.views.servers'),
     #path(r'^servers/$','explorer.views.servers'),/\
 
 
