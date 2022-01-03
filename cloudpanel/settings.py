@@ -83,8 +83,8 @@ DATABASES = {
         'NAME': 'cloudpanel',
         'USER': 'test',
         'PASSWORD': 'TEST',
-        'HOST': 'localhost',
-        'PORT': '32450'
+        'HOST': '192.168.59.100',
+        'PORT': '31961'
     }
 }
 
