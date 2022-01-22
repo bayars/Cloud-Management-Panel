@@ -8,7 +8,7 @@ platform:
 steps:
   - name: Install poetry
     commands:
-      - apt-get update && apt-get install python3-venv 
+      - apt-get update -y && apt-get install python3-venv -y 
   - name: install packages
     commands: 
       - curl -sSL https://install.python-poetry.org | python3 - 
