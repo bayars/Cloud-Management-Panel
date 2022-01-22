@@ -20,7 +20,7 @@ steps:
       - ls -l $USER/poetry/bin && $USER/poetry/bin/poetry config virtualenvs.create true --local
   - name: install django packages
     commands:
-      - poetry install
+      - $USER/poetry/bin/poetry install && ls -l
  
 triggers:
   branch:
