@@ -25,6 +25,7 @@ steps:
 triggers:
   branch:
   - master 
+  - dronetest
   event:
   - push
   - tag
