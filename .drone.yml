@@ -9,12 +9,15 @@ steps:
   - name: Install poetry
     commands:
       - apt-get update -y && apt-get install python3-venv -y 
+  - name: create poetry home directory
+    commands:
+      - mkdir $HOME/poetry
   - name: install packages
     commands: 
-      - curl -sSL https://install.python-poetry.org | python3 - 
+      - curl -sSL https://install.python-poetry.org | POETRY_HOME=$USER/poetry python3 - 
   - name: install packages locally 
     commands:
-      - poetry config virtualenvs.create true --local
+      - ls -l $USER/poetry/ && $USER/poetry/local/bin config virtualenvs.create true --local
   - name: install django packages
     commands:
       - poetry install
