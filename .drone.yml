@@ -17,7 +17,7 @@ steps:
       - curl -sSL https://install.python-poetry.org | POETRY_HOME=$USER/poetry python3 - 
   - name: install packages locally 
     commands:
-      - ls -l $USER/poetry/ && $USER/poetry/local/bin config virtualenvs.create true --local
+      - ls -l $USER/poetry/bin && $USER/poetry/bin/poetry config virtualenvs.create true --local
   - name: install django packages
     commands:
       - poetry install
