@@ -1,0 +1,12 @@
+---
+kind: pipeline
+type: exec
+name: build-exec
+platform:
+  os: linux
+  arch: arm
+steps:
+  - name: Install poetry
+    commands:
+      - curl -sSL https://install.python-poetry.org | python3 - 
+ 
