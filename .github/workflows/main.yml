@@ -29,6 +29,9 @@ jobs:
       # - name: Install poetry
       #   run: apt-get update -y && apt-get install python3-venv -y 
 
+      - name: install packages
+        run: sudo apt-get update && sudo apt-get -y install libffi-dev
+
       - name: create poetry home directory
         run: mkdir $HOME/poetry
 
