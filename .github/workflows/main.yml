@@ -36,6 +36,6 @@ jobs:
         run: curl -sSL https://install.python-poetry.org | python3 - 
       
       - name: install packages locally 
-        run: /home/runner/.local/bin config virtualenvs.path ".venv" && /home/runner/.local/bin config virtualenvs.create true --local
+        run: /home/runner/.local/bin/poetry config virtualenvs.path ".venv" && /home/runner/.local/bin/poetry config virtualenvs.create true --local
       - name: install django packages
-        run: /home/runner/.local/bin install && ls -l
+        run: /home/runner/.local/bin/poetry install && ls -l
