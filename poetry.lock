@@ -6,6 +6,9 @@ category = "main"
 optional = false
 python-versions = ">=3.7"
 
+[package.dependencies]
+typing-extensions = {version = "*", markers = "python_version < \"3.8\""}
+
 [package.extras]
 tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 
@@ -103,16 +106,16 @@ reference = 'piwheel'
 
 [[package]]
 name = "django"
-version = "4.0"
-description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
+version = "3.2.11"
+description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
-python-versions = ">=3.8"
+python-versions = ">=3.6"
 
 [package.dependencies]
-asgiref = ">=3.4.1,<4"
+asgiref = ">=3.3.2,<4"
+pytz = "*"
 sqlparse = ">=0.2.2"
-tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
@@ -220,6 +223,19 @@ url = "https://www.piwheels.org/simple"
 reference = 'piwheel'
 
 [[package]]
+name = "pytz"
+version = "2021.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.source]
+type = "legacy"
+url = "https://www.piwheels.org/simple"
+reference = 'piwheel'
+
+[[package]]
 name = "requests"
 version = "2.25.0"
 description = "Python HTTP for Humans."
@@ -269,6 +285,19 @@ url = "https://www.piwheels.org/simple"
 reference = 'piwheel'
 
 [[package]]
+name = "typing-extensions"
+version = "4.0.1"
+description = "Backported and Experimental Type Hints for Python 3.6+"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.source]
+type = "legacy"
+url = "https://www.piwheels.org/simple"
+reference = 'piwheel'
+
+[[package]]
 name = "tzdata"
 version = "2021.5"
 description = "Provider of IANA time zone data"
@@ -301,8 +330,8 @@ reference = 'piwheel'
 
 [metadata]
 lock-version = "1.1"
-python-versions = "3.9.2"
-content-hash = "08619668441b6e90a552a0ae2ab0455e72137fd2da8951c5a5a3ee5257a3b328"
+python-versions = "^3.7"
+content-hash = "7ee2ca78fdb45bf3c3f43e3cc21c0b61bd641279665f21e01379cbc1ffe4e188"
 
 [metadata.files]
 asgiref = [
@@ -335,7 +364,7 @@ cryptography = [
     {file = "cryptography-36.0.1-cp39-cp39-linux_armv7l.whl", hash = "sha256:77ddd77d3850a9fee13d3504332d6229b1c501268f5f8518d1ed4ba6fce773ee"},
 ]
 django = [
-    {file = "Django-4.0-py3-none-any.whl", hash = "sha256:7d182b319442b1c3986dd7998b189c2cb4324be5fc7aa59d2f5c9afbd22cd9f8"},
+    {file = "Django-3.2.11-py3-none-any.whl", hash = "sha256:f70f53456448d82124c7a912d1c038145311c5648b655bd655f61a5c97eec4f3"},
 ]
 idna = [
     {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:4a57a6379512ade94fa99e2fa46d3cd0f2f553040548d0e2958c6ed90ee48226"},
@@ -372,6 +401,9 @@ pynacl = [
     {file = "PyNaCl-1.5.0-cp39-cp39-linux_armv6l.whl", hash = "sha256:a564aa68646c21741d860b1b66082f2562b9958afd60f12294915a078c61edcf"},
     {file = "PyNaCl-1.5.0-cp39-cp39-linux_armv7l.whl", hash = "sha256:a564aa68646c21741d860b1b66082f2562b9958afd60f12294915a078c61edcf"},
 ]
+pytz = [
+    {file = "pytz-2021.3-py3-none-any.whl", hash = "sha256:3f0820049ea2e942b7852a85801bc97e29913d278baa5c984e1a4a2075d173d2"},
+]
 requests = [
     {file = "requests-2.25.0-py2.py3-none-any.whl", hash = "sha256:e786fa28d8c9154e6a4de5d46a1d921b8749f8b74e28bde23768e5e16eece998"},
 ]
@@ -380,6 +412,9 @@ six = [
 ]
 sqlparse = [
     {file = "sqlparse-0.4.2-py3-none-any.whl", hash = "sha256:143025bddc0acbaa7e1b40441056fc898c597d907f89e5605458c1c657dbc210"},
+]
+typing-extensions = [
+    {file = "typing_extensions-4.0.1-py3-none-any.whl", hash = "sha256:816d8d4810a8d107c8c0d3896373939499850a476d7ad0158ddbe7062541f947"},
 ]
 tzdata = [
     {file = "tzdata-2021.5-py2.py3-none-any.whl", hash = "sha256:e6bb85f1434e30236adcc1168e2372a3a2b8efb99bcb733802c1fed7c442157d"},
