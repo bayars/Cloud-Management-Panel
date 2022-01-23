@@ -22,7 +22,8 @@ steps:
     commands:
       - $USER/poetry/bin/poetry install && ls -la
   - name: Django initilization
-    commands:  poetry run python manage.py test 
+    commands:
+      - poetry run python manage.py test 
  
 triggers:
   branch:
