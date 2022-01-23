@@ -36,9 +36,9 @@ jobs:
         run: mkdir $HOME/poetry
 
       - name: install packages
-        run: curl -sSL https://install.python-poetry.org | python3 - 
+        run: curl -sSL https://install.python-poetry.org | POETRY_HOME=./.venv/ python3 - 
       
       - name: install packages locally 
-        run: /home/runner/.local/bin/poetry config experimental.new-installer false && /home/runner/.local/bin/poetry config virtualenvs.path ".venv" && /home/runner/.local/bin/poetry config virtualenvs.create true --local
+        run: .venv/bin/poetry config experimental.new-installer false && .venv/bin/poetry config virtualenvs.path ".venv" && .venv/bin/poetry config virtualenvs.create true --local
       - name: install django packages
-        run: /home/runner/.local/bin/poetry install && ls -l
+        run: .venv/bin/poetry install && ls -l
