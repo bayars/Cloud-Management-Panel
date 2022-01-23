@@ -14,10 +14,10 @@ steps:
       - mkdir $HOME/poetry
   - name: install packages
     commands: 
-      - curl -sSL https://install.python-poetry.org | POETRY_HOME=.venv/bin/poetry python3 - 
+      - curl -sSL https://install.python-poetry.org | POETRY_HOME=.venv python3 - 
   - name: install packages locally 
     commands:
-      - poetry config experimental.new-installer false && .venv/bin/poetry config virtualenvs.path ".venv" && .venv/bin/poetry config virtualenvs.create true --local
+      - .venv/bin/poetry config experimental.new-installer false && .venv/bin/poetry config virtualenvs.path ".venv" && .venv/bin/poetry config virtualenvs.create true --local
   - name: install django packages
     commands:
       - .venv/poetry/bin install && ls -la .venv
