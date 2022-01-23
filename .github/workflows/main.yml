@@ -33,7 +33,7 @@ jobs:
         run: mkdir $HOME/poetry
 
       - name: install packages
-        run: curl -sSL https://install.python-poetry.org | POETRY_HOME=$USER/poetry python3 - 
+        run: curl -sSL https://install.python-poetry.org | python3 - 
       
       - name: install packages locally 
         run: $USER/poetry/bin/poetry config virtualenvs.path ".venv" && $USER/poetry/bin/poetry config virtualenvs.create true --local
