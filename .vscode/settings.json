@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "https://json.schemastore.org/yamllint.json": "file:///home/safa/works/django/Cloud-Management-Panel/.drone.yml"
-    }
-}
