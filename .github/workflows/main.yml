@@ -25,10 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      # - name: Install poetry
-      #   run: apt-get update -y && apt-get install python3-venv -y 
-
       - name: create poetry home directory
         run: mkdir $HOME/poetry
 
@@ -39,4 +35,10 @@ jobs:
         run: $HOME/poetry/bin/poetry config experimental.new-installer false && $HOME/poetry/bin/poetry config virtualenvs.path ".venv" && $HOME/poetry/bin/poetry config virtualenvs.create true --local  
       
       - name: install django packages
-        run: $HOME/poetry/bin/poetry config --list && $HOME/poetry/bin/poetry install &&  ls -la ./ && ls -la .venv  && ls -la .venv/bin && ls -la .venv/lib 
+        run: $HOME/poetry/bin/poetry config --list && $HOME/poetry/bin/poetry install 
+
+      - name: Current directory structures for see .venv
+        run: ls -la ./ && ls -la .venv  && ls -la .venv/bin && ls -la .venv/lib 
+
+      - name: Show home poetry it had set before as poetry home 
+        run: ls -lah $HOME/poetry/ 
