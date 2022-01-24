@@ -43,4 +43,4 @@ jobs:
       
       
       - name: install django packages
-        run: source "$($HOME/.local/bin/poetry env list --full-path | tail -1 | sed 's/.\{12\}$//')/bin/activate" && $HOME/.local/bin/poetry install && ls -l
+        run:  $HOME/.local/bin/poetry install && ls -l # source "$($HOME/.local/bin/poetry env list --full-path | tail -1 | sed 's/.\{12\}$//')/bin/activate" &&
