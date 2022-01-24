@@ -39,7 +39,7 @@ jobs:
         run: curl -sSL https://install.python-poetry.org | POETRY_HOME="/etc/poetry" python3 - 
       
       - name: install packages locally 
-        run:  /etc/poetry/bin/poetry config experimental.new-installer false # $HOME/.local/bin/poetry config virtualenvs.path ".venv" && $HOME/.local/bin/poetry config virtualenvs.create true --local ## && 
+        run:  /etc/poetry/bin/poetry config experimental.new-installer false && /etc/poetry/bin/poetry config virtualenvs.path ".venv" && /etc/poetry/bin/poetry config virtualenvs.create true --local  
       
       - name: install django packages
         run: /etc/poetry/bin/poetry install && ls -l 
