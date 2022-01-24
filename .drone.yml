@@ -20,7 +20,7 @@ steps:
       - /etc/poetry/bin/poetry config experimental.new-installer false && /etc/poetry/bin/poetry config virtualenvs.path ".venv" && /etc/poetry/bin/poetry config cache-dir .venv/.cache/ --local && /etc/poetry/bin/poetry config virtualenvs.create true --local
   - name: install django packages
     commands:
-      - /etc/poetry/bin/poetry install && ls -la .venv  && ls -la  .venv
+      - /etc/poetry/bin/poetry install && ls -la ./ && ls -la  .venv && /etc/poetry/bin/poetry config --list
   - name: Django initilization
     commands:
       - /etc/poetry/bin/poetry run python manage.py test 
