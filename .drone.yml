@@ -8,7 +8,7 @@ platform:
 steps:
   - name: Install poetry
     commands:
-      - apt-get update -y && apt-get install python3-venv -y 
+      - apt-get update -y && apt-get install python3-venv libffi-dev -y 
   - name: create poetry home directory
     commands:
       - mkdir $HOME/poetry
