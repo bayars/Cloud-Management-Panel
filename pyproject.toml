@@ -6,7 +6,6 @@ authors = ["Safa Bayar <rectionxx@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-cffi = {url = "https://www.piwheels.org/simple/cffi/cffi-1.15.0-cp39-cp39-linux_armv7l.whl#sha256=9733677bd97cecb003f62fc919a3bf6af0449e1e20a8cb8578c1fcbb0bd8881d"}
 Django = "^3.2"
 psycopg2 = "2.8.5"
 psycopg2_binary = "2.8.5"
