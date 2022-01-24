@@ -24,6 +24,13 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+      
+      - name: change directory
+        working-directory: cloudpanel
+        run: ls -alh
+
+      - name: test directory
+        run: ls -alh
 
       - name: create poetry home directory
         run: mkdir $HOME/poetry
