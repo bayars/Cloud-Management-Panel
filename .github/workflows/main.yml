@@ -41,4 +41,4 @@ jobs:
       # - name: install packages locally 
       #   run: .venv/bin/poetry config virtualenvs.path ".venv" && .venv/bin/poetry config virtualenvs.create true --local ##.venv/bin/poetry config experimental.new-installer false && 
       - name: install django packages
-        run: $HOME/.poetry/bin/poetry install && ls -l
+        run: $HOME/.local/bin/poetry install && ls -l
