@@ -63,10 +63,8 @@ python-versions = "*"
 pycparser = "*"
 
 [package.source]
-type = "legacy"
-url = "https://www.piwheels.org/simple"
-reference = 'piwheel'
-
+type = "url"
+url = "https://www.piwheels.org/simple/cffi/cffi-1.15.0-cp37-cp37m-linux_armv7l.whl#sha256=2b4d29d69a6c852eb902b54f0a140f98ef20cb1fde000923e8f9aafd07fa7e70"
 [[package]]
 name = "chardet"
 version = "3.0.4"
@@ -331,7 +329,7 @@ reference = 'piwheel'
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "7ee2ca78fdb45bf3c3f43e3cc21c0b61bd641279665f21e01379cbc1ffe4e188"
+content-hash = "8b65d1b58ad51d795035349e0d8a3423b6361e0b83548bab432b03fc4fe6deb3"
 
 [metadata.files]
 asgiref = [
@@ -346,14 +344,7 @@ bcrypt = [
 certifi = [
     {file = "certifi-2021.10.8-py2.py3-none-any.whl", hash = "sha256:eaf5fd6a051cba81570919009491fc35069c99da0dd8d57304930ee7a5699fb0"},
 ]
-cffi = [
-    {file = "cffi-1.15.0-cp35-cp35m-linux_armv6l.whl", hash = "sha256:9c39a248297b514b4074a3250291298c2daa40993998e36067f5f4b9e82c8e5a"},
-    {file = "cffi-1.15.0-cp35-cp35m-linux_armv7l.whl", hash = "sha256:9c39a248297b514b4074a3250291298c2daa40993998e36067f5f4b9e82c8e5a"},
-    {file = "cffi-1.15.0-cp37-cp37m-linux_armv6l.whl", hash = "sha256:2b4d29d69a6c852eb902b54f0a140f98ef20cb1fde000923e8f9aafd07fa7e70"},
-    {file = "cffi-1.15.0-cp37-cp37m-linux_armv7l.whl", hash = "sha256:2b4d29d69a6c852eb902b54f0a140f98ef20cb1fde000923e8f9aafd07fa7e70"},
-    {file = "cffi-1.15.0-cp39-cp39-linux_armv6l.whl", hash = "sha256:9733677bd97cecb003f62fc919a3bf6af0449e1e20a8cb8578c1fcbb0bd8881d"},
-    {file = "cffi-1.15.0-cp39-cp39-linux_armv7l.whl", hash = "sha256:9733677bd97cecb003f62fc919a3bf6af0449e1e20a8cb8578c1fcbb0bd8881d"},
-]
+cffi = []
 chardet = [
     {file = "chardet-3.0.4-py2.py3-none-any.whl", hash = "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"},
 ]

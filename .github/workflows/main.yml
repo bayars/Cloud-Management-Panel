@@ -6,7 +6,7 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ dronetest ]
+    branches: [ githubtest ]
   pull_request:
     branches: [ master ]
 
@@ -42,4 +42,4 @@ jobs:
         run: $HOME/poetry/bin/poetry config experimental.new-installer false && $HOME/poetry/bin/poetry config virtualenvs.path ".venv" && $HOME/poetry/bin/poetry config virtualenvs.create true --local  
       
       - name: install django packages
-        run: $HOME/poetry/bin/poetry config --list && $HOME/poetry/bin/poetry update  && ls -l  && $HOME/poetry/bin/poetry install  
+        run: $HOME/poetry/bin/poetry config --list &&  ls -l  && $HOME/poetry/bin/poetry install  
