@@ -29,9 +29,6 @@ jobs:
       # - name: Install poetry
       #   run: apt-get update -y && apt-get install python3-venv -y 
 
-      - name: install packages
-        run: sudo apt-get update && sudo apt-get -y install libffi-dev python-dev
-
       - name: create poetry home directory
         run: mkdir $HOME/poetry
 
@@ -42,4 +39,4 @@ jobs:
         run: $HOME/poetry/bin/poetry config experimental.new-installer false && $HOME/poetry/bin/poetry config virtualenvs.path ".venv" && $HOME/poetry/bin/poetry config virtualenvs.create true --local  
       
       - name: install django packages
-        run: $HOME/poetry/bin/poetry config --list &&  ls -l  && $HOME/poetry/bin/poetry install  
+        run: $HOME/poetry/bin/poetry config --list && ls -la ./ && ls -la .venv && $HOME/poetry/bin/poetry install  
