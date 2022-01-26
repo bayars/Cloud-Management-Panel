@@ -6,24 +6,27 @@ platform:
   os: linux
   arch: arm
 steps:
-  - name: Install poetry
-    commands:
-      - apt-get update -y && apt-get install python3-venv libffi-dev -y 
-  - name: create poetry home directory
-    commands:
-      - mkdir $HOME/poetry
+#   - name: Install poetry
+#     commands:
+#       - apt-get update -y && apt-get install python3-venv libffi-dev -y 
+#   - name: create poetry home directory
+#     commands:
+#       - mkdir $HOME/poetry
   - name: install packages
     commands: 
-      -  git fetch --all --tags && pwd && ls -lah .git/ &&  VERSION="$(git describe --tags | tail -n1)" && echo $VERSION && curl -sSL https://install.python-poetry.org |  POETRY_HOME="/etc/poetry" python3 - 
-  - name: install packages locally 
-    commands:
-      - /etc/poetry/bin/poetry config experimental.new-installer false && /etc/poetry/bin/poetry config virtualenvs.path ".venv" && /etc/poetry/bin/poetry config cache-dir .venv/.cache/ --local && /etc/poetry/bin/poetry config virtualenvs.create true --local
-  - name: install django packages
-    commands:
-      - /etc/poetry/bin/poetry install && ls -la ./ && ls -la  .venv && /etc/poetry/bin/poetry config --list
-  - name: Django initilization
-    commands:
-      - /etc/poetry/bin/poetry run python manage.py test 
+      -  git fetch --all --tags && pwd && ls -lah .git/ &&  VERSION="$(git describe --tags | tail -n1)" && echo $VERSION 
+      
+      
+#       && curl -sSL https://install.python-poetry.org |  POETRY_HOME="/etc/poetry" python3 - 
+#   - name: install packages locally 
+#     commands:
+#       - /etc/poetry/bin/poetry config experimental.new-installer false && /etc/poetry/bin/poetry config virtualenvs.path ".venv" && /etc/poetry/bin/poetry config cache-dir .venv/.cache/ --local && /etc/poetry/bin/poetry config virtualenvs.create true --local
+#   - name: install django packages
+#     commands:
+#       - /etc/poetry/bin/poetry install && ls -la ./ && ls -la  .venv && /etc/poetry/bin/poetry config --list
+#   - name: Django initilization
+#     commands:
+#       - /etc/poetry/bin/poetry run python manage.py test 
  
 triggers:
   branch:
