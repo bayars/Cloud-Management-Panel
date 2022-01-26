@@ -14,7 +14,7 @@ steps:
 #       - mkdir $HOME/poetry
   - name: install packages
     commands: 
-      -  git fetch --all --tags && pwd && ls -lah .git/ &&  VERSION="$(git tag | tail -n1)" && echo $VERSION 
+      -  git fetch --tags && git submodule update --init && pwd && ls -lah .git/ &&  VERSION="$(git tag | tail -n1)" && echo $VERSION 
       
       
 #       && curl -sSL https://install.python-poetry.org |  POETRY_HOME="/etc/poetry" python3 - 
