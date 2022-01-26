@@ -14,7 +14,7 @@ steps:
       - mkdir $HOME/poetry
   - name: install packages
     commands: 
-      -  git fetch --all --tags && pwd && ls -lah&&  VERSION="$(git describe --tags `git rev-list --tags --max-count=1`)" && echo $VERSION && curl -sSL https://install.python-poetry.org |  POETRY_HOME="/etc/poetry" python3 - 
+      -  git fetch --all --tags && pwd && ls -lah .git/ &&  VERSION="$(git describe --tags | tail -n1)" && echo $VERSION && curl -sSL https://install.python-poetry.org |  POETRY_HOME="/etc/poetry" python3 - 
   - name: install packages locally 
     commands:
       - /etc/poetry/bin/poetry config experimental.new-installer false && /etc/poetry/bin/poetry config virtualenvs.path ".venv" && /etc/poetry/bin/poetry config cache-dir .venv/.cache/ --local && /etc/poetry/bin/poetry config virtualenvs.create true --local
