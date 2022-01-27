@@ -9,6 +9,7 @@ steps:
   - name: Install poetry
     image: python:3.7
     commands:
+      - apt-get update -y && apt-get install python3-venv curl -y 
       - mkdir $HOME/poetry
       - curl -sSL https://install.python-poetry.org |  POETRY_HOME="/etc/poetry" python3 - 
       - /etc/poetry/bin/poetry config experimental.new-installer false && /etc/poetry/bin/poetry config virtualenvs.path ".venv" && /etc/poetry/bin/poetry config cache-dir .venv/.cache/ --local && /etc/poetry/bin/poetry config virtualenvs.create true --local
