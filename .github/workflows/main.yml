@@ -24,19 +24,19 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      
+
       - name: change directory
         working-directory: cloudpanel
         run: ls -alh
 
       - name: test directory
-        run: ls -alh
-
-      - name: create poetry home directory
         run: mkdir $HOME/poetry
 
+      - name: create poetry home directory
+        run: apt-get update && apt-get install python3-venv -y
+
       - name: install packages
-        run: curl -sSL https://install.python-poetry.org | POETRY_HOME="$HOME/poetry/" python3 - 
+        run: curl -sSL https://install.python-poetry.org | POETRY_HOME="$HOME/poetry/"  python3 - --version 1.1.6
       
       - name: install packages locally 
         run: $HOME/poetry/bin/poetry config experimental.new-installer false && $HOME/poetry/bin/poetry config virtualenvs.create true 
@@ -45,7 +45,9 @@ jobs:
         run: $HOME/poetry/bin/poetry config --list && $HOME/poetry/bin/poetry install 
 
       - name: Current directory structures for see .venv
-        run: ls -la ./ && ls -la .venv  && ls -la .venv/bin && ls -la .venv/lib 
+        run: ls -la ./
 
-      - name: Show home poetry it had set before as poetry home 
-        run: ls -lah $HOME/poetry/ 
+      # - name: run pytest
+      #   run: $HOME/poetry/bin/poetry run python3 -m pytest
+      # - name: Show home poetry it had set before as poetry home 
+      #   run: ls -lah $HOME/poetry/ 

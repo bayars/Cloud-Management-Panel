@@ -5,9 +5,8 @@ description = ""
 authors = ["Safa Bayar <rectionxx@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "^3.9"
 Django = "^3.2"
-psycopg2 = "2.8.5"
 psycopg2_binary = "2.8.5"
 paramiko = "2.7.1"
 urllib3 = "^1.26.7"
@@ -17,8 +16,14 @@ pycparser = "^2.21"
 
 [tool.poetry.dev-dependencies]
 requests = "2.25.0"
-
+pytest = "^6.2.5"
+cryptography = "^36.0.0"
+cffi = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "piwheels"
+url = "https://piwheels.org/simple/" 
