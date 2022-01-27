@@ -9,7 +9,7 @@ steps:
   - name: Install poetry
     image: python:3.7
     commands:
-      - apt-get update -y && apt-get install python3-venv curl -y 
+      - apt-get clean && apt-get update -y && apt-get install python3-venv curl -y 
       - mkdir $HOME/poetry
       - curl -sSL https://install.python-poetry.org |  python3 - 
       # - ${HOME}/.local/bin/poetry  config experimental.new-installer false && ${HOME}/.local/bin/poetry  config virtualenvs.path ".venv" && ${HOME}/.local/bin/poetry  config cache-dir .venv/.cache/ --local && ${HOME}/.local/bin/poetry  config virtualenvs.create true --local
@@ -28,7 +28,7 @@ steps:
   - name: update
     image: debian
     commands:
-      - apt-get update && apt-get install curl python3-venv python3 -y
+      - apt clean && apt-get update && apt-get install curl python3-venv python3 -y
 
 triggers:
   branch:
