@@ -7,6 +7,7 @@ platform:
   arch: arm
 steps:
   - name: Install poetry
+    image: debian
     commands:
       - apt-get update -y && apt-get install python3-venv -y 
       - mkdir $HOME/poetry
