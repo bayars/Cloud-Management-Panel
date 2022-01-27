@@ -12,7 +12,7 @@ steps:
       - apt-get update -y && apt-get install python3-venv curl -y 
       - mkdir $HOME/poetry
       - curl -sSL https://install.python-poetry.org |  python3 - 
-      - ${HOME}/.local/bin/poetry  config experimental.new-installer false && ${HOME}/.local/bin/poetry  config virtualenvs.path ".venv" && ${HOME}/.local/bin/poetry  config cache-dir .venv/.cache/ --local && ${HOME}/.local/bin/poetry  config virtualenvs.create true --local
+      # - ${HOME}/.local/bin/poetry  config experimental.new-installer false && ${HOME}/.local/bin/poetry  config virtualenvs.path ".venv" && ${HOME}/.local/bin/poetry  config cache-dir .venv/.cache/ --local && ${HOME}/.local/bin/poetry  config virtualenvs.create true --local
       - ${HOME}/.local/bin/poetry install && ls -la ./ && ls -la  .venv && ${HOME}/.local/bin/poetry  config --list
       - ${HOME}/.local/bin/poetry  run python manage.py test 
  
