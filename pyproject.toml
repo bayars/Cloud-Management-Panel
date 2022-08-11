@@ -6,7 +6,7 @@ authors = ["Safa Bayar <rectionxx@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-Django = "^4.0.4"
+Django = "^4.0.7"
 psycopg2 = "^2.8.5"
 psycopg2_binary = "^2.8.5"
 paramiko = "^2.7.1"
