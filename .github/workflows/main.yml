@@ -6,7 +6,11 @@ name: CI
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
+<<<<<<< HEAD
     branches: [ githubtest ]
+=======
+    branches: [ dronetest ]
+>>>>>>> 0421e4450aeb637344bc8b053ecc07f0ca898bbb
   pull_request:
     branches: [ master ]
 
@@ -25,6 +29,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+<<<<<<< HEAD
       - name: change directory
         working-directory: cloudpanel
         run: ls -alh
@@ -51,3 +56,19 @@ jobs:
       #   run: $HOME/poetry/bin/poetry run python3 -m pytest
       # - name: Show home poetry it had set before as poetry home 
       #   run: ls -lah $HOME/poetry/ 
+=======
+      # Runs a single command using the runners shell
+      - name: Install poetry
+        run: apt-get update -y && apt-get install python3-venv -y 
+
+      - name: create poetry home directory
+        run: mkdir $HOME/poetry
+
+      - name: install packages
+        run: curl -sSL https://install.python-poetry.org | POETRY_HOME=$USER/poetry python3 - 
+      
+      - name: install packages locally 
+        run: $USER/poetry/bin/poetry config virtualenvs.path ".venv" && $USER/poetry/bin/poetry config virtualenvs.create true --local
+      - name: install django packages
+        run: $USER/poetry/bin/poetry install && ls -l
+>>>>>>> 0421e4450aeb637344bc8b053ecc07f0ca898bbb
