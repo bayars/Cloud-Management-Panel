@@ -25,6 +25,12 @@ cffi = "*"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+
+[[tool.poetry.source]]
+name = 'pypi_'  # needed until python-poetry/poetry#3456 is resolved.
+url = 'https://pypi.org/simple'
+
 [[tool.poetry.source]]
 name = "piwheels"
 url = "https://piwheels.org/simple/" 
+secondary = true
