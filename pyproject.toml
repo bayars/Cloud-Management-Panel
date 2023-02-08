@@ -18,7 +18,7 @@ pycparser = "^2.21"
 [tool.poetry.dev-dependencies]
 requests = "2.25.0"
 pytest = "^6.2.5"
-cryptography = "^36.0.0"
+cryptography = "^39.0.1"
 cffi = "*"
 
 [build-system]
